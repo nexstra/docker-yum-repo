@@ -3,9 +3,7 @@ version: '2.1'
 services:
   yum:
     build: .
-    ports:
-      - "8888:80"
     image: nexstra/docker-yum-repo
     volumes:
       - /repo/yum/nexstra:/repo
-      - /repo/yum/logs:/logs
+    user: "1000:1000"
